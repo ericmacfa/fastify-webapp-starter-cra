@@ -5,9 +5,14 @@ export function Home(props) {
     const [apiMessage, setApiMessage] = useState();
 
     useEffect(() => {
-        axios.get('/api/hello').then((response) => {
-            setApiMessage(response.data);
-        });
+        axios
+            .get('/api/hello')
+            .then((response) => {
+                setApiMessage(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }, []);
 
     return (
