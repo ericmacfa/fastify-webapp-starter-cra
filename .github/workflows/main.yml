@@ -5,6 +5,8 @@ on: [push]
 jobs:
     lint:
         runs-on: ubuntu-latest
+        env:
+            CI: true
         strategy:
             matrix:
                 node-version: [10.x, 12.x]
@@ -14,9 +16,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
+            - name: Install dependencies
+              run: npm ci
             - name: Run ESLint
-              run: |
-                  npm ci
-                  npm run lint
-              env:
-                  CI: true
+              run: npm run lint
