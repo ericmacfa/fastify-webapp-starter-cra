@@ -40,7 +40,7 @@
         "fastify-formbody": "^3.1.0",
         "fastify-oauth2": "^3.0.0",
         "fastify-session": "^3.2.0",
-        "fastify-static": "^2.5.1",
+        "fastify-static": "^4.2.4",
         "jsonwebtoken": "^8.5.1",
         "jwks-rsa": "^1.6.0",
         "memorystore": "^1.6.1",
